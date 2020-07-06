@@ -395,6 +395,7 @@ app.get('/channels/:channelName/transactions/:trxnId', async function (req, res)
 	let message = await query.getTransactionByID(peer, req.params.channelName, trxnId, req.username, req.orgname);
 	res.send(message);
 });
+
 // Query Get Block by Hash
 app.get('/channels/:channelName/blocks', async function (req, res) {
 	logger.debug('================ GET BLOCK BY HASH ======================');
@@ -409,6 +410,7 @@ app.get('/channels/:channelName/blocks', async function (req, res) {
 	let message = await query.getBlockByHash(peer, req.params.channelName, hash, req.username, req.orgname);
 	res.send(message);
 });
+
 //Query for Channel Information
 app.get('/channels/:channelName', async function (req, res) {
 	logger.debug('================ GET CHANNEL INFORMATION ======================');
@@ -418,6 +420,7 @@ app.get('/channels/:channelName', async function (req, res) {
 	let message = await query.getChainInfo(peer, req.params.channelName, req.username, req.orgname);
 	res.send(message);
 });
+
 //Query for Channel instantiated chaincodes
 app.get('/channels/:channelName/chaincodes', async function (req, res) {
 	logger.debug('================ GET INSTANTIATED CHAINCODES ======================');
@@ -427,6 +430,7 @@ app.get('/channels/:channelName/chaincodes', async function (req, res) {
 	let message = await query.getInstalledChaincodes(peer, req.params.channelName, 'instantiated', req.username, req.orgname);
 	res.send(message);
 });
+
 // Query to fetch all Installed/instantiated chaincodes
 app.get('/chaincodes', async function (req, res) {
 	var peer = req.query.peer;
@@ -436,6 +440,7 @@ app.get('/chaincodes', async function (req, res) {
 	let message = await query.getInstalledChaincodes(peer, null, 'installed', req.username, req.orgname)
 	res.send(message);
 });
+
 // Query to fetch channels
 app.get('/channels', async function (req, res) {
 	logger.debug('================ GET CHANNELS ======================');

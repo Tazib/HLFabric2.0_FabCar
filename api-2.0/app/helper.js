@@ -73,7 +73,7 @@ const getRegisteredUser = async (username, userOrg, isJson) => {
             message: username + ' enrolled Successfully',
         };
         return response
-    }
+    }   
 
     // Check to see if we've already enrolled the admin user.
     let adminIdentity = await wallet.get('admin');
